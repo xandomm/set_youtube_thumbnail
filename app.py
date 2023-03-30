@@ -23,14 +23,11 @@ from oauth2client.tools import argparser, run_flow
 #   https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
 CLIENT_SECRETS_FILE = "client_secrets.json"
 
-# This OAuth 2.0 access scope allows for full read/write access to the
-# authenticated user's account.
 YOUTUBE_READ_WRITE_SCOPE = "https://www.googleapis.com/auth/youtube"
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
-# This variable defines a message to display if the CLIENT_SECRETS_FILE is
-# missing.
+
 MISSING_CLIENT_SECRETS_MESSAGE = """
 WARNING: Please configure OAuth 2.0
 
@@ -61,8 +58,7 @@ def get_authenticated_service(args):
   return build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
     http=credentials.authorize(httplib2.Http()))
 
-# Call the API's thumbnails.set method to upload the thumbnail image and
-# associate it with the appropriate video.
+
 def upload_thumbnail(youtube, video_id, file):
   youtube.thumbnails().set(
     videoId=video_id,
@@ -70,11 +66,10 @@ def upload_thumbnail(youtube, video_id, file):
   ).execute()
 
 if __name__ == "__main__":
-  # The "videoid" option specifies the YouTube video ID that uniquely
-  # identifies the video for which the thumbnail image is being updated.
+ 
   argparser.add_argument("--video-id", 
     help="ID of video whose thumbnail you're updating.")
-  # The "file" option specifies the path to the thumbnail image file.
+
   argparser.add_argument("--file", 
     help="Path to thumbnail image file.")
   args = argparser.parse_args()
