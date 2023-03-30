@@ -3,6 +3,7 @@
 /client_secrets.json
 pyvenv.cfg
 .venv
+**/.DS_Store
 pip-selfcheck.json
 app.py-oauth2.json
 client_secrets.json
