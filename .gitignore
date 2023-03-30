@@ -5,8 +5,9 @@ pyvenv.cfg
 .venv
 **/.DS_Store
 pip-selfcheck.json
-app.py-oauth2.json
+app.py-oauth2.jsons
 client_secrets.json
+*.DS_Store
 .DS_Store
 /bin
 /lib
