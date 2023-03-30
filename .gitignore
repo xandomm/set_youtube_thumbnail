@@ -1,0 +1,15 @@
+# created by virtualenv automatically
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+app.py-oauth2.json
+client_secret.json
+/bin
+/lib
