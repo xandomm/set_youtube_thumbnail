@@ -3,7 +3,7 @@
 import httplib2
 import os
 import sys
-
+from set_image.main import main
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.client import flow_from_clientsecrets
@@ -66,7 +66,7 @@ def upload_thumbnail(youtube, video_id, file):
   ).execute()
 
 if __name__ == "__main__":
- 
+  main()
   argparser.add_argument("--video-id", 
     help="ID of video whose thumbnail you're updating.")
 
@@ -74,12 +74,10 @@ if __name__ == "__main__":
     help="Path to thumbnail image file.")
   args = argparser.parse_args()
 
-  if not os.path.exists(args.file):
-    exit("Please specify a valid file using the --file= parameter.")
 
   youtube = get_authenticated_service(args)
   try:
-    upload_thumbnail(youtube, args.video_id, args.file)
+    upload_thumbnail(youtube, "hVt7Dr36pSU", "set-image/images/thumb/final_thumb.png")
   except (HttpError, e):
     print(e.resp.status, e.content)
   else:
